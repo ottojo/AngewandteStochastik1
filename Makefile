@@ -3,6 +3,7 @@ VIEWER=xdg-open
 DOT=dot
 
 all: main.pdf
+	$(info ARTIFACTS:main.pdf)
 
 .PHONY: main.pdf
 main.pdf:
