@@ -1,0 +1,27 @@
+\documentclass[a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{gensymb}
+
+% Bold \emph
+\DeclareTextFontCommand{\emph}{\boldmath\bfseries}
+
+
+
+\author{Jonas Otto}
+\title{Vorlesungsnotizen zu \enquote{Angewandte Stochastik I} an der Uni Ulm}
+\date{Sommersemester 2020}
+
+
+\begin{document}
+
+\maketitle
+
+\include{chapters/Einleitung}
+\include{chapters/Wahrscheinlichkeiten}
+
+\end{document}
