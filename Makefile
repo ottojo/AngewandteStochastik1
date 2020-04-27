@@ -1,3 +1,4 @@
+RUBBER=rubber
 LATEXMK=latexmk
 VIEWER=xdg-open
 DOT=dot
@@ -8,6 +9,10 @@ all: main.pdf
 .PHONY: main.pdf
 main.pdf:
 	$(LATEXMK) -pdf main.tex
+
+.PHONY: main_rubber
+main_rubber:
+	$(RUBBER) -d main.tex
 
 show: all
 	screen -dm $(VIEWER) main.pdf
