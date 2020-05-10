@@ -6,10 +6,20 @@
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{gensymb}
+\usepackage{amsthm}
+
 
 % Bold \emph
 \DeclareTextFontCommand{\emph}{\boldmath\bfseries}
 
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\newcommand{\ts}{$\sigma$}
+\newcommand{\tS}{$\Sigma$}
+\newcommand{\tO}{$\Omega$}
 
 
 \author{Jonas Otto}

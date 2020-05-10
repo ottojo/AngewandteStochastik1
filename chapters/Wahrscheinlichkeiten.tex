@@ -70,3 +70,91 @@ Die Menge $A_1 \cup A_2 = \{KK, KZ, ZK\}$ ist das Ereignis \enquote{Es fällt mi
 Kopf}.\\
 Die Menge $A_1 \cap A_2 = \{KK\}$ ist das Ereignis \enquote{Es fällt zwei Mal Kopf}.\\
 
+
+\subsection{$\sigma$-Algebra}
+Welchen Teilmengen $A$ von $\Omega$ sollen Wahrscheinlichkeiten $P(A)$ zugeordnet werden?
+Ideal wäre: man definiert $P(A)$ für alle $A \subset \Omega$, das heißt für alle
+$A \in \mathbb{P}(\Omega) := \{B:B\subset\Omega\}$, die Potenzmenge von $\Omega$.
+Das geht, falls $\Omega$ endlich oder anzählbar ist.
+Es ist aber im Allgemeinen nicht möglich
+(z.B. falls $\Omega = \mathbb{R}$).
+Deswegen beschränkt man sich auf ein Teilsystem $\Sigma \subseteq \mathbb{P}(\Omega)$ von
+Ereignissen.
+\paragraph{Forderungen an $\Sigma$:}
+Mengenoperationen mit Ereignissen liefern wieder Ereignisse.
+
+\begin{definition}
+    Sei $\Omega \neq \emptyset$ eine beliebige Menge.
+    Eine Menge $\Sigma \subseteq \mathbb{P}(\Omega)$ heißt eine $\sigma$-Algebra, falls
+    \begin{enumerate}
+        \item $\Omega \in \Sigma$
+        \item Falls $A \in \Sigma$, dann gilt $A^\complement \in \Sigma$
+        \item Falls $A_1, A_2, \dots \in \Sigma$, dann gilt:
+            $\bigcup\limits_{i=1}^\infty A_i \in \Sigma$
+    \end{enumerate}
+\end{definition}
+
+Die Elemente der $\sigma$-Algebra heißen \emph{Ereignis}.
+Es folgt, dass $\emptyset$ ein Element jeder $\sigma$-Algebra ist. Dieses Ereignis heißt
+\emph{unmögliches Ereignis} und tritt nie ein.
+Es folgt, dass \emph{endliche Vereinigungen von Ereignissen} auch Ereignisse sind.
+
+\paragraph{Beispiel: Münzwurf}
+$\Omega = \{K, Z\}$. Die Mengen\\
+$\Sigma_1=\{\Omega, \emptyset\}$ und\\
+$\Sigma_2=\{\Omega, \emptyset, \{K\}, \{Z\}\} = \mathbb{P}(\Omega)$ sind $\sigma$-Algebren.\\
+Die $\sigma$-Algebra $\Sigma_1$ heißt die \emph{triviale $\sigma$-Algebra}.\\
+Beachte: $K \notin \Sigma_2$, aber $\{K\} \in \Sigma_2$, Ergebnisse sind \emph{keine} Ereignisse!
+
+\paragraph{Beispiel:} $\Omega = \{1,2,3\}$\\
+Dann sind die Mengen\\
+$\Sigma_1 = \{\Omega, \emptyset\}$,\\
+$\Sigma_2 = \{\Omega, \emptyset, \{1\}, \{2,3\}\}$,\\
+$\Sigma_3 = \{\Omega, \emptyset, \{2\}, \{1,3\}\}$,\\
+$\Sigma_4 = \{\Omega, \emptyset, \{3\}, \{1,2\}\}$,\\
+$\Sigma_5 = \{\Omega, \emptyset, \{1\}, \{2\}, \{2,3\}, \{1,3\}, \{1,2\}, \{3\} \} = \mathbb{P}(\Omega)$
+$\sigma$-Algebren
+
+\begin{theorem}
+    Für jede $\sigma$-Algebra $\Sigma$ gilt
+    \begin{enumerate}
+        \item $\emptyset \in \Sigma$
+        \item falls $A, B \in \Sigma$ dann gilt: $A \cup B, A \cap B, A \setminus B \in \Sigma$
+        \item falls $A_1,A_2,\dots \in \Sigma$, dann gilt $\bigcap\limits_{i=1}^\infty A_i \in \Sigma$
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Wahrscheinlichkeiten}
+
+Wir definieren $P(A)$ für alle $A \in \Sigma$.
+\begin{definition}[Disjunkte Mengen]
+    Mengen $A, B$ heißen disjunkt, falls $A\cap B = \emptyset$\\
+    Mengen $A_1, A_2, \dots$ heißen paarweise disjunkt (p.d.) falls für alle $i \neq j$ gilt
+    $A_i \cap A_j = \emptyset$
+\end{definition}
+
+Idee: P soll folgende Eigenschaften haben:
+\begin{enumerate}
+    \item Für alle $A\in \Sigma$ gilt: $0 \leq P(A)\leq 1$
+    \item $P(\Omega) = 1$ und $P(\emptyset) = 0$
+    \item $P(A^\complement) = 1-P(A)$ für alle $A\in \Sigma$
+    \item falls $A,B\in\Sigma$ disjunkt sind, so gilt
+        $P(A\cup B) = P(A) + P(B)$.
+    \item falls $A_1, A_2,\dots \in \Sigma$ p.d., so gilt
+        $P(\bigcup\limits_{i=1}^\infty A_i) = \sum_{i=1}^\infty P(A_i)$
+\end{enumerate}
+
+Das motiviert folgende Definition
+
+\begin{definition}[Wahrscheinlichkeitsmaß]
+    Sei $\Omega \neq \emptyset$ und \tS\ eine \ts-Algebra auf \tO.
+    Eine Abbildung $P: \Sigma \to [0,1]$ heißt Wahrscheinlichkeitsmaß (W-Maß) auf \tS\ falls
+    \begin{enumerate}
+        \item $P(\Omega) = 1$
+        \item Sind $A_1, A_2,\dots \in \Sigma$ paarweise disjunkt, dann gilt
+            $P\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i)$
+            (\ts-Additivität)
+    \end{enumerate}
+\end{definition}
+\noindent
+Das Tripel $\left( \Omega, \Sigma, P\right)$ heißt \emph{Wahrscheinlichkeitsraum} (W-Raum).
