@@ -158,3 +158,43 @@ Das motiviert folgende Definition
 \end{definition}
 \noindent
 Das Tripel $\left( \Omega, \Sigma, P\right)$ heißt \emph{Wahrscheinlichkeitsraum} (W-Raum).
+
+\subsection{Beispiele zum Wahrscheinlichkeitsraum}
+\subsubsection{Münzwurf}
+Modellierung durch den Wahrscheinlichkeitsraum $(\Omega, \Sigma, P)$ mit\\
+$\Omega = \{K,Z\},$\\
+$\Sigma = \mathbb{P}(\Omega) = \{ \Omega, \emptyset, \{K\}, \{Z\}\}$\\
+$P: \Sigma \to [0,1]$ mit\\
+$P(\Omega) = 1, P(\emptyset) = 0, P(\{K\}) = 0.5, P(\{Z\}) = 0.5$
+
+\subsubsection{Würfeln}
+Modellierung durch den Wahrscheinlichkeitsraum $(\Omega, \Sigma, P)$ mit\\
+$\Omega = \{1,2,\dots,6\}$\\
+$\Sigma =\mathbb{P}(\Omega)$\\
+$P: \Sigma \to [0,1]$ mit\\
+$P(\Omega) = 1, P(\emptyset) = 0$,\\
+$P(\{1\})=\frac{1}{6}, P(\{2\})=\frac{1}{6}, \dots$\\
+$P(\{1, 2\})=\frac{1}{3}, P(\{1,2,3\})=\frac{1}{2}$\\
+Also kann man kürzer schreiben $P(A) = \frac{|A|}{|\Omega|}$, mit $|A|$ der Anzahl der Elemente in $A$
+(Kardinalität von $A$).
+
+\subsubsection{Geschlecht von Neugeborenen}
+Modellierung durch den Wahrscheinlichkeitsraum $(\Omega, \Sigma, P)$ mit\\
+$\Omega = \{W,M\}$\\
+$\Sigma = \mathbb{P}(\Omega\}$\\
+$P: \Sigma \to [0,1]$ mit\\
+$P(\Omega) = 1, P(\emptyset)=0$\\
+$P(\{W\}) = p, P(\{M\}) = 1-p$, wobei $p \in [0,1]$.\\
+Wahl von $p$: länderspezifisch auf Basis relativer Häufigkeiten, z.B. für Deutschland $p=0.4863$ (1970-1999).
+
+\subsection{Eigenschaften von W-Maßen}
+\begin{theorem}[Eigenschaften von W-Maßen]
+    Sei $(\Omega, \Sigma, P)$ ein W-Raum, und seien $A, B, A_1, A_2, \dots \in \Sigma$.
+    \begin{enumerate}
+        \item Ist $A \subseteq B$, so gilt $P(B) = P(A) + P(B\setminus A)$ und
+            $P(A) \leq P(B)$ (Monotonie)
+        \item $P(A \cup B) = P(A) + P(B) - P(A\cap B)$
+        \item $P\left(\cup_{i=1}^\infty A_i\right) \leq \sum_{i=1}^\infty P(A_i)$ (\ts-Subadditivität)
+    \end{enumerate}
+\end{theorem}
+
