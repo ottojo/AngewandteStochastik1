@@ -198,3 +198,36 @@ Wahl von $p$: länderspezifisch auf Basis relativer Häufigkeiten, z.B. für Deu
     \end{enumerate}
 \end{theorem}
 
+
+\subsection{Endliche Wahrscheinlichkeitsräume}
+In diesem Abschnitt: \tO\ ist endlich, d.h. $\Omega = \{\omega_1, \omega_2, \dots, \omega_n\}$
+für ein $n \in \mathbb{N}$.
+In diesem Fall kann man $\Sigma = \mathbb{P}(\Omega)$ wählen.
+Ferner ist ein W-Maß $P$ bereits durch die Werte $p_i = P(\{\omega_i\}), i=1,\dots,n$
+von Elementarereignissen $\{\omega_i\}$ eindeutig bestimmt.
+
+\begin{definition}[Endlicher W-Raum]
+    Ein W-Raum $(\Omega, \Sigma,  P)$ heißt \emph{endlicher W-Raum}, falls \tO\ endlich ist und
+    $\Sigma = \mathbb{P}(\Omega)$ gilt.
+\end{definition}
+
+Beachte: Sei $(\Omega, \Sigma, P)$ ein endlicher W-Raum. Im Allgemeinen ist es nicht der Fall, dass alle
+Elementarereignisse gleichwahrscheinlich sind.
+
+\paragraph{Laplace W-Räume} Ein besonders einfacher Fall liegt dann vor, wenn alle Elementarereignisse
+$\{\omega_i\}$ gleichwahrscheinlich sind.
+
+\begin{definition}[Laplace-W-Raum]
+    Ein endlicher W-Raum $(\Omega, \Sigma, P)$ und $p_i = P(\{\omega_i\}) = \frac{1}{|\Omega|} = \frac{1}{n}$
+    für alle $i=1,\dots,n$ heißt \emph{Laplace-W-Raum}.
+    Das W-Maß $P$ heißt \emph{diskrete Gleichverteilung}.
+    Man schreibt $P=U(\Omega)$ (\textit{uniform}).
+    Ein Zufallsexperiment, welches durch einen Laplace-Raum bechrieben ist, nennt man ein
+    Laplace-Experiment.
+\end{definition}
+
+Sei \wraum\ ein Laplace W-Raum. Es folgt:
+\begin{equation*}
+    P(A) = \sum_{\w_i \in A} P(\{\w_i\}) = \sum_{\w_i \in A} \frac{1}{|\tO|} = \frac{|A|}{|\tO|}
+\end{equation*}
+
