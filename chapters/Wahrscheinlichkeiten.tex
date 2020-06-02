@@ -22,8 +22,8 @@ Beachte:
 \begin{itemize}
     \item Bei der Wahl des Ergebnisraums gibt es kein \enquote{richtig} oder \enquote{falsch}.
           Das Ziel ist, einen einfachen aber adäquaten Raum zu wählen.
-      \item Der Ergebnisraum kann unterschiedliche Kardinalität haben
-            (in den Beispielen: endlich, abzählbar unendlich, überabzählbar unendlich).
+    \item Der Ergebnisraum kann unterschiedliche Kardinalität haben
+          (in den Beispielen: endlich, abzählbar unendlich, überabzählbar unendlich).
 \end{itemize}
 
 \subsection{Ereignisse}
@@ -55,10 +55,10 @@ Mittels Mengenoperationen können Ereignisse zu neuen Ereignissen verknüpft wer
     \item $A^\complement = \Omega\setminus A$: Ereignis $A$ tritt nicht ein.
 
     \item $\bigcup\limits_{i=1}^\infty A_i$: Mindestens eines der Ereignisse
-        $A_1, A_2, \dots$ tritt ein.
+          $A_1, A_2, \dots$ tritt ein.
 
     \item $\bigcap\limits_{i=1}^\infty A_i$: Alle Ereignisse $A_1, A_2, \dots$
-        treten ein.
+          treten ein.
 \end{itemize}
 
 \paragraph{Beispiel} Münze wird zwei Mal geworfen.\\
@@ -67,7 +67,7 @@ Sei $A_1$ das Ereignis \enquote{Im ersten Wurf fällt Kopf} und\\
 sei $A_2$ das Ereignis \enquote{Im zweiten Wurf fällt Kopf}. Dann gilt\\
 $A_1 = \{KK, KZ\}$, $A_2 = \{KK, ZK\}$.\\
 Die Menge $A_1 \cup A_2 = \{KK, KZ, ZK\}$ ist das Ereignis \enquote{Es fällt mindestens ein Mal
-Kopf}.\\
+    Kopf}.\\
 Die Menge $A_1 \cap A_2 = \{KK\}$ ist das Ereignis \enquote{Es fällt zwei Mal Kopf}.\\
 
 
@@ -90,7 +90,7 @@ Mengenoperationen mit Ereignissen liefern wieder Ereignisse.
         \item $\Omega \in \Sigma$
         \item Falls $A \in \Sigma$, dann gilt $A^\complement \in \Sigma$
         \item Falls $A_1, A_2, \dots \in \Sigma$, dann gilt:
-            $\bigcup\limits_{i=1}^\infty A_i \in \Sigma$
+              $\bigcup\limits_{i=1}^\infty A_i \in \Sigma$
     \end{enumerate}
 \end{definition}
 
@@ -139,9 +139,9 @@ Idee: P soll folgende Eigenschaften haben:
     \item $P(\Omega) = 1$ und $P(\emptyset) = 0$
     \item $P(A^\complement) = 1-P(A)$ für alle $A\in \Sigma$
     \item falls $A,B\in\Sigma$ disjunkt sind, so gilt
-        $P(A\cup B) = P(A) + P(B)$.
+          $P(A\cup B) = P(A) + P(B)$.
     \item falls $A_1, A_2,\dots \in \Sigma$ p.d., so gilt
-        $P(\bigcup\limits_{i=1}^\infty A_i) = \sum_{i=1}^\infty P(A_i)$
+          $P(\bigcup\limits_{i=1}^\infty A_i) = \sum_{i=1}^\infty P(A_i)$
 \end{enumerate}
 
 Das motiviert folgende Definition
@@ -152,8 +152,8 @@ Das motiviert folgende Definition
     \begin{enumerate}
         \item $P(\Omega) = 1$
         \item Sind $A_1, A_2,\dots \in \Sigma$ paarweise disjunkt, dann gilt
-            $P\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i)$
-            (\ts-Additivität)
+              $P\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i)$
+              (\ts-Additivität)
     \end{enumerate}
 \end{definition}
 \noindent
@@ -192,7 +192,7 @@ Wahl von $p$: länderspezifisch auf Basis relativer Häufigkeiten, z.B. für Deu
     Sei $(\Omega, \Sigma, P)$ ein W-Raum, und seien $A, B, A_1, A_2, \dots \in \Sigma$.
     \begin{enumerate}
         \item Ist $A \subseteq B$, so gilt $P(B) = P(A) + P(B\setminus A)$ und
-            $P(A) \leq P(B)$ (Monotonie)
+              $P(A) \leq P(B)$ (Monotonie)
         \item $P(A \cup B) = P(A) + P(B) - P(A\cap B)$
         \item $P\left(\cup_{i=1}^\infty A_i\right) \leq \sum_{i=1}^\infty P(A_i)$ (\ts-Subadditivität)
     \end{enumerate}

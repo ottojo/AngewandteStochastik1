@@ -1,0 +1,61 @@
+\chapter{Kombinatorik}
+
+\section{Urnenmodelle}
+\begin{itemize}
+    \item Urne mit $n$ Kugeln, welche nummeriert sind mit $1, \dots , n$.
+    \item Zufälliges Ziehen von $k$ Kugeln
+\end{itemize}
+Das Ergebnis ist ein Vektor $(\w_1,\dots , \w_k)$ wobei ein Element jeweils die
+Nummer einer Kugel ist.
+
+\subsection{Verschiedene Arten von Ziehungen}
+\begin{enumerate}
+    \item Mit Zurücklegen (z.B Ergebnis $(1,1,2,2)$ möglich) \\
+          Ohne Zurücklegen (z.B. Ergebnis $(1,1,2,2)$ nicht möglich)
+    \item Mit Beachten der Reihenfolge\\
+          Ohne Beachten der Reihenfolge
+\end{enumerate}
+$\implies$ Insgesamt 4 mögliche Fälle.
+
+\subsubsection{Fall 1: Mit Zurücklegen und mit Beachtung der Reihenfolge}
+Die Menge aller Ergebnisse ist
+\begin{align*}
+    \tO_1 & = \{ (\w_1, \dots ,\w_k): \w_1, \dots ,\w_k \in \{1,\dots ,n\} \}\\
+          & =\{ 1,\dots ,n \}^k
+\end{align*}
+Für die Kardinalität der Menge gilt
+\begin{equation*}
+    |\tO_1| = n^k
+\end{equation*}
+
+\subsubsection{Fall 2: Ohne Zurücklegen, mit Beachtung der Reihenfolge}
+$\implies k \leq n$.\\
+Menge aller Ergebnisse:
+\begin{equation*}
+    \tO_2 = \{ (\w_1, \dots ,\w_k): \w_1, \dots ,\w_k \in \{ 1, \dots ,n \} \text{ und } \w_i \neq \w_j \text{ für } i \neq j \}
+\end{equation*}
+Es gilt:
+\begin{equation*}
+    |\tO_2| = n \cdot (n-1) \cdot (n-2) \cdots (n-k+1) = \frac{n!}{(n-k)!}
+\end{equation*}
+Insbesondere gilt für $n=k$: $|\tO_2| = n!$.
+
+\subsubsection{Fall 3: Ohne Zurücklegen, ohne Beachtung der Reihenfolge}
+$\implies k \leq n$.\\
+Vorgehen: Erst Beachten der Reihenfolge, dann sortieren der Vektoren in aufsteigender Reihenfolge.
+\begin{equation*}
+    \tO_3 = \{ (\w_1, \dots ,\w_k): 1 \leq \w_1 < \w_2 < \dots < \w_k \leq k \}
+\end{equation*}
+\begin{equation*}
+    |\tO_3| = \frac{|\tO_2|}{k!} = \frac{n!}{(n-k)! \cdot k!} = \binom{n}{k}
+\end{equation*}
+
+\subsubsection{Fall 4: Mit Zurücklegen, ohne Beachtung der Reihenfolge}
+Analog zu Fall 3:
+\begin{equation*}
+    \tO_4 = \{ (\w_1, \dots ,\w_k): 1 \leq \w_1 \leq \w_2 \leq \dots \leq \w_k \leq k \}
+\end{equation*}
+Die Kardinalität ist (ohne Beweis):
+\begin{equation*}
+    |\tO_4| = \binom{n+k-1}{k}
+\end{equation*}
