@@ -1,8 +1,7 @@
-\chapter{Wahrscheinlichkeiten}
-\section{Wahrscheinlichkeitsräume}
+\chapter{Wahrscheinlichkeitsräume}
 Ziel dieses Abschnittes ist die Mathematische Modellierung von Zufallsexperimenten
 
-\subsection{Ergebnisraum Omega}
+\section{Ergebnisraum Omega}
 Der Ergebnisraum $\Omega$ ist die Menge aller möglichen Ergebnisse $\omega$ des
 Zufallsexperimentes.
 
@@ -26,7 +25,7 @@ Beachte:
           (in den Beispielen: endlich, abzählbar unendlich, überabzählbar unendlich).
 \end{itemize}
 
-\subsection{Ereignisse}
+\section{Ereignisse}
 Motivation: Oft ist nicht das tatsächliche Ergebnis des Experiments interessant, sondern nur
 ob das Ergebnis in eine vorgegebene Menge von Ergebnissen $A$ fällt.
 
@@ -71,7 +70,7 @@ Die Menge $A_1 \cup A_2 = \{KK, KZ, ZK\}$ ist das Ereignis \enquote{Es fällt mi
 Die Menge $A_1 \cap A_2 = \{KK\}$ ist das Ereignis \enquote{Es fällt zwei Mal Kopf}.\\
 
 
-\subsection{Sigma-Algebra}
+\section{Sigma-Algebra}
 Welchen Teilmengen $A$ von $\Omega$ sollen Wahrscheinlichkeiten $P(A)$ zugeordnet werden?
 Ideal wäre: man definiert $P(A)$ für alle $A \subset \Omega$, das heißt für alle
 $A \in \mathbb{P}(\Omega) := \{B:B\subset\Omega\}$, die Potenzmenge von $\Omega$.
@@ -124,7 +123,7 @@ $\sigma$-Algebren
     \end{enumerate}
 \end{theorem}
 
-\subsection{Wahrscheinlichkeiten}
+\section{Wahrscheinlichkeiten}
 
 Wir definieren $P(A)$ für alle $A \in \Sigma$.
 \begin{definition}[Disjunkte Mengen]
@@ -159,15 +158,15 @@ Das motiviert folgende Definition
 \noindent
 Das Tripel $\left( \Omega, \Sigma, P\right)$ heißt \emph{Wahrscheinlichkeitsraum} (W-Raum).
 
-\subsection{Beispiele zum Wahrscheinlichkeitsraum}
-\subsubsection{Münzwurf}
+\section{Beispiele zum Wahrscheinlichkeitsraum}
+\subsection{Münzwurf}
 Modellierung durch den Wahrscheinlichkeitsraum $(\Omega, \Sigma, P)$ mit\\
 $\Omega = \{K,Z\},$\\
 $\Sigma = \mathbb{P}(\Omega) = \{ \Omega, \emptyset, \{K\}, \{Z\}\}$\\
 $P: \Sigma \to [0,1]$ mit\\
 $P(\Omega) = 1, P(\emptyset) = 0, P(\{K\}) = 0.5, P(\{Z\}) = 0.5$
 
-\subsubsection{Würfeln}
+\subsection{Würfeln}
 Modellierung durch den Wahrscheinlichkeitsraum $(\Omega, \Sigma, P)$ mit\\
 $\Omega = \{1,2,\dots,6\}$\\
 $\Sigma =\mathbb{P}(\Omega)$\\
@@ -178,7 +177,7 @@ $P(\{1, 2\})=\frac{1}{3}, P(\{1,2,3\})=\frac{1}{2}$\\
 Also kann man kürzer schreiben $P(A) = \frac{|A|}{|\Omega|}$, mit $|A|$ der Anzahl der Elemente in $A$
 (Kardinalität von $A$).
 
-\subsubsection{Geschlecht von Neugeborenen}
+\subsection{Geschlecht von Neugeborenen}
 Modellierung durch den Wahrscheinlichkeitsraum $(\Omega, \Sigma, P)$ mit\\
 $\Omega = \{W,M\}$\\
 $\Sigma = \mathbb{P}(\Omega\}$\\
@@ -187,7 +186,7 @@ $P(\Omega) = 1, P(\emptyset)=0$\\
 $P(\{W\}) = p, P(\{M\}) = 1-p$, wobei $p \in [0,1]$.\\
 Wahl von $p$: länderspezifisch auf Basis relativer Häufigkeiten, z.B. für Deutschland $p=0.4863$ (1970-1999).
 
-\subsection{Eigenschaften von W-Maßen}
+\section{Eigenschaften von W-Maßen}
 \begin{theorem}[Eigenschaften von W-Maßen]
     Sei $(\Omega, \Sigma, P)$ ein W-Raum, und seien $A, B, A_1, A_2, \dots \in \Sigma$.
     \begin{enumerate}
@@ -199,7 +198,7 @@ Wahl von $p$: länderspezifisch auf Basis relativer Häufigkeiten, z.B. für Deu
 \end{theorem}
 
 
-\subsection{Endliche Wahrscheinlichkeitsräume}
+\section{Endliche Wahrscheinlichkeitsräume}
 In diesem Abschnitt: \tO\ ist endlich, d.h. $\Omega = \{\omega_1, \omega_2, \dots, \omega_n\}$
 für ein $n \in \mathbb{N}$.
 In diesem Fall kann man $\Sigma = \mathbb{P}(\Omega)$ wählen.
@@ -236,3 +235,131 @@ Die Bestimmung der Kardinalitäten von \tO\ und $A$ kann nichttrivial sein.
     Seien $A_1, \dots ,A_n$ endliche Mengen und $A= \{ (a_1, \dots , a_n): a_1 \in A_1, \dots , a_n \in A_n \} = A_1 \times \dots \times A_n$.
     Dann gilt $|A| = |A_1| \cdot |A_2| \cdots |A_n|$
 \end{theorem}
+
+\subsection{Urnenmodelle}
+\begin{itemize}
+    \item Urne mit $n$ Kugeln, welche nummeriert sind mit $1, \dots , n$.
+    \item Zufälliges Ziehen von $k$ Kugeln
+\end{itemize}
+Das Ergebnis ist ein Vektor $(\w_1,\dots , \w_k)$ wobei ein Element jeweils die
+Nummer einer Kugel ist.
+
+\subsubsection{Verschiedene Arten von Ziehungen}
+\begin{enumerate}
+    \item Mit Zurücklegen (z.B Ergebnis $(1,1,2,2)$ möglich) \\
+          Ohne Zurücklegen (z.B. Ergebnis $(1,1,2,2)$ nicht möglich)
+    \item Mit Beachten der Reihenfolge\\
+          Ohne Beachten der Reihenfolge
+\end{enumerate}
+$\implies$ Insgesamt 4 mögliche Fälle.
+
+\subsubsection{Fall 1: Mit Zurücklegen und mit Beachtung der Reihenfolge}
+Die Menge aller Ergebnisse ist
+\begin{align*}
+    \tO_1 & = \{ (\w_1, \dots ,\w_k): \w_1, \dots ,\w_k \in \{1,\dots ,n\} \}\\
+          & =\{ 1,\dots ,n \}^k
+\end{align*}
+Für die Kardinalität der Menge gilt
+\begin{equation*}
+    |\tO_1| = n^k
+\end{equation*}
+
+\subsubsection{Fall 2: Ohne Zurücklegen, mit Beachtung der Reihenfolge}
+$\implies k \leq n$.\\
+Menge aller Ergebnisse:
+\begin{equation*}
+    \tO_2 = \{ (\w_1, \dots ,\w_k): \w_1, \dots ,\w_k \in \{ 1, \dots ,n \} \text{ und } \w_i \neq \w_j \text{ für } i \neq j \}
+\end{equation*}
+Es gilt:
+\begin{equation*}
+    |\tO_2| = n \cdot (n-1) \cdot (n-2) \cdots (n-k+1) = \frac{n!}{(n-k)!}
+\end{equation*}
+Insbesondere gilt für $n=k$: $|\tO_2| = n!$.
+
+\subsubsection[Urnenmodell, Fall 3]{Fall 3: Ohne Zurücklegen, ohne Beachtung der Reihenfolge}
+\label{sec:urne3}
+$\implies k \leq n$.\\
+Vorgehen: Erst Beachten der Reihenfolge, dann sortieren der Vektoren in aufsteigender Reihenfolge.
+\begin{equation*}
+    \tO_3 = \{ (\w_1, \dots ,\w_k): 1 \leq \w_1 < \w_2 < \dots < \w_k \leq k \}
+\end{equation*}
+\begin{equation*}
+    |\tO_3| = \frac{|\tO_2|}{k!} = \frac{n!}{(n-k)! \cdot k!} = \binom{n}{k}
+\end{equation*}
+
+\subsubsection{Fall 4: Mit Zurücklegen, ohne Beachtung der Reihenfolge}
+Analog zu Fall 3:
+\begin{equation*}
+    \tO_4 = \{ (\w_1, \dots ,\w_k): 1 \leq \w_1 \leq \w_2 \leq \dots \leq \w_k \leq k \}
+\end{equation*}
+Die Kardinalität ist (ohne Beweis):
+\begin{equation*}
+    |\tO_4| = \binom{n+k-1}{k}
+\end{equation*}
+
+\subsection{Weitere W-Maße in endlichen W-Räumen}
+\subsubsection{Hypergeometrische Verteilung}
+Darstellung im Urnenmodell: Die Urne enthält $n$ Kugeln, davon sind $B$ blau, und $n-B$ weiß.
+Dabei ist $B \in \{0,\dots ,n\}$. Es werden $k$ Kugeln gezogen, ohne Zurücklegen und ohne beachten
+der Reihenfolge.
+
+Es soll nun für $b \in  \{0,\dots ,k\}$ die Wahrscheinlichkeit berechnet werden für das Ereignis
+$A_b$ = "genau $b$ der gezogenen Kugeln sind blau".
+
+Dazu wird das Experiment mit einen Laplace Raum modelliert, mit
+\begin{equation*}
+    \tO = \{ (\w_1, \dots ,\w_k): 1 \leq \w_1 < \w_2 < \dots < \w_k \leq n \}
+\end{equation*}
+(analog zu \nameref{sec:urne3}). \w\ ist dabei die Nummer einer Kugel.
+Da es sich um einen Laplace Raum handelt, gilt
+\begin{equation*}
+    P(A_b) = \frac{|A_b|}{|\tO|}
+\end{equation*},
+und aus dem Urnenmodell ergibt sich
+\begin{equation*}
+    |\tO| = \binom{n}{k}
+\end{equation*}.
+Nun muss die Kardinalität $|A_b|$ bestimmt werden.
+Für die Fälle "mehr blaue Kugeln als in der Urne vorhanden" und
+"mehr weiße Kugeln als in der Urne vorhanden", kann bereits festgestellt werden:
+\begin{equation*}
+    |A_b| = \begin{cases}
+        0 &\text{falls } b>B\\
+        0 &\text{falls } b-k>n-B (\iff b<k-(n-B))
+    \end{cases}
+\end{equation*}
+
+In allen anderen Fällen gilt
+\begin{equation*}
+    |A_b| = \underbrace{\binom{B}{b}}_\text{
+        \hidewidth 
+        Anzahl an Möglichkeiten für $b$ blaue Kugeln 
+        \hidewidth} \cdot
+     \overbrace{\binom{n-B}{k-b}}^\text{
+        \hidewidth 
+        Anzahl an Möglichkeiten für $k-b$ weiße Kugeln
+        \hidewidth }
+\end{equation*}
+Damit folgt:
+\begin{equation*}
+    P(A_b)= \begin{cases}
+        0 &\text{falls } b>B \text{ oder } b<k-(n-B)\\
+        \frac{\binom{B}{b} \binom{n-B}{k-b}}{\binom{n}{k}} &\text{sonst}
+    \end{cases}
+\end{equation*}
+
+Das gleiche Experiment kann auch anders modelliert werden:
+\begin{equation*}
+    \tO = \{ 0, \dots ,k \}, \Sigma = \mathbb{P}(\tO)
+\end{equation*}
+\begin{equation*}
+    P(\{b\}) = \begin{cases}
+        0 &\text{falls } b>B \text{ oder } b<k-(n-B)\\
+        \frac{\binom{B}{b} \binom{n-B}{k-b}}{\binom{n}{k}} &\text{sonst}
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    P(A) = \sum_{b \in A} P(\{b\})
+\end{equation*}
+Dieses W-Maß heißt \emph{Hypergeometrische Verteilung} mit Parametern $n, B, k$.
+Man schreibt $P=H(n,B,k)$.
