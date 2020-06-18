@@ -409,3 +409,14 @@ Hier ist das Ereignis nicht mehr der Vektor mit Resultaten,
 sondern direkt die Anzahl an Erfolgen.
 Dieses W-Maß heißt Binomialverteilung mit Parametern $n$ und $p$.
 Man schreibt $P = B(n,p)$.
+
+\subsection{Diskrete Wahrscheinlichkeitsräume}
+Bisher war \tO\ endlich. In diesem Abschnitt soll \tO\ abzählbar unendlich sein, d.h.
+$\tO = \{ \w_1, \w_2, \dots\}$, $\w_i \neq \w_j$ für $i \neq j$.
+
+\subsubsection{Poisson Verteilung}
+$\tO = \mathbb{N}_0$, $\tS = P(\tO)$
+\begin{align*}
+    P(\{k\}) &= \frac{\lambda^k}{k!} \cdot e^{-\lambda}, \; k \in \mathbb{N}_0, \; \lambda > 0\\
+    P(A)     & = \sum_{k \in A} P(\{k\}), \; A \in \tS
+\end{align*}
