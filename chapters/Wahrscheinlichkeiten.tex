@@ -256,7 +256,7 @@ $\implies$ Insgesamt 4 mögliche Fälle.
 \subsubsection{Fall 1: Mit Zurücklegen und mit Beachtung der Reihenfolge}
 Die Menge aller Ergebnisse ist
 \begin{align*}
-    \tO_1 & = \{ (\w_1, \dots ,\w_k): \w_1, \dots ,\w_k \in \{1,\dots ,n\} \}\\
+    \tO_1 & = \{ (\w_1, \dots ,\w_k): \w_1, \dots ,\w_k \in \{1,\dots ,n\} \} \\
           & =\{ 1,\dots ,n \}^k
 \end{align*}
 Für die Kardinalität der Menge gilt
@@ -324,27 +324,27 @@ Für die Fälle "mehr blaue Kugeln als in der Urne vorhanden" und
 "mehr weiße Kugeln als in der Urne vorhanden", kann bereits festgestellt werden:
 \begin{equation*}
     |A_b| = \begin{cases}
-        0 &\text{falls } b>B\\
-        0 &\text{falls } b-k>n-B (\iff b<k-(n-B))
+        0 & \text{falls } b>B                      \\
+        0 & \text{falls } b-k>n-B (\iff b<k-(n-B))
     \end{cases}
 \end{equation*}
 
 In allen anderen Fällen gilt
 \begin{equation*}
     |A_b| = \underbrace{\binom{B}{b}}_\text{
-        \hidewidth 
-        Anzahl an Möglichkeiten für $b$ blaue Kugeln 
+        \hidewidth
+        Anzahl an Möglichkeiten für $b$ blaue Kugeln
         \hidewidth} \cdot
-     \overbrace{\binom{n-B}{k-b}}^\text{
-        \hidewidth 
+    \overbrace{\binom{n-B}{k-b}}^\text{
+        \hidewidth
         Anzahl an Möglichkeiten für $k-b$ weiße Kugeln
         \hidewidth }
 \end{equation*}
 Damit folgt:
 \begin{equation*}
     P(A_b)= \begin{cases}
-        0 &\text{falls } b>B \text{ oder } b<k-(n-B)\\
-        \frac{\binom{B}{b} \binom{n-B}{k-b}}{\binom{n}{k}} &\text{sonst}
+        0                                                  & \text{falls } b>B \text{ oder } b<k-(n-B) \\
+        \frac{\binom{B}{b} \binom{n-B}{k-b}}{\binom{n}{k}} & \text{sonst}
     \end{cases}
 \end{equation*}
 
@@ -354,8 +354,8 @@ Das gleiche Experiment kann auch anders modelliert werden:
 \end{equation*}
 \begin{equation*}
     P(\{b\}) = \begin{cases}
-        0 &\text{falls } b>B \text{ oder } b<k-(n-B)\\
-        \frac{\binom{B}{b} \binom{n-B}{k-b}}{\binom{n}{k}} &\text{sonst}
+        0                                                  & \text{falls } b>B \text{ oder } b<k-(n-B) \\
+        \frac{\binom{B}{b} \binom{n-B}{k-b}}{\binom{n}{k}} & \text{sonst}
     \end{cases}
 \end{equation*}
 \begin{equation*}
@@ -363,3 +363,49 @@ Das gleiche Experiment kann auch anders modelliert werden:
 \end{equation*}
 Dieses W-Maß heißt \emph{Hypergeometrische Verteilung} mit Parametern $n, B, k$.
 Man schreibt $P=H(n,B,k)$.
+
+\subsubsection{Bernoulli Verteilung}
+\label{sec:bernoulli}
+Hier sind die einzig möglichen Ergebnisse "Erfolg" und "Misserfolg":
+$\tO = \{ 0,1 \}$, $\tS = P(\tO)$.
+Die Erfolgswahrscheinlichkeit ist gegeben durch $p \in [0,1]$:
+\begin{align*}
+    P(\{1\})     & = p   \\
+    P(\{0\})     & = 1-p \\
+    P(\emptyset) & = 0   \\
+    P(\tO)       & = 1
+\end{align*}
+Dieses Wahrscheinlichkeitsmaß heißt Bernoulli Verteilung mit Parameter $p$.
+Man schreibt $P=B(1,p)$.
+
+\subsubsection{Binomial Verteilung}
+Hier wird das Experiment der \nameref{sec:bernoulli} $n$-malig wiederholt.
+Modellierung durch den W-Raum \wraum\ mit:
+\begin{align*}
+    \tO       & = \left\{ (\w_1, \dots , \w_n): \w_1, \dots , \w_n \in \{0,1\} \right\} = \{0,1\}^n \\
+    \tS       & = P(\tO)                                                                            \\
+    P(\{\w\}) & = P(\{(\w_1, \dots , \w_n)\}) = p^k \cdot (1-p)^{n-k}
+\end{align*}
+Wobei $k=\sum_{i=1}^n \w_i$ die Anzahl der Erfolge ist.
+
+\begin{equation*}
+    P(A) = \sum_{\w \in A} P(\{\w\}), \; A \in \tS
+\end{equation*}
+Betrachtet wird das Ereignis $A_k =$ "genau $k$ Erfolge" mit $k \in \{0, \dots , n\}$.
+Es gilt:
+\begin{align*}
+    P(A_k) & = \sum_{\w \in A_k} P(\{ \w \})            \\
+           & = \sum_{\w \in A_k} p^k (1-p)^{n-k}        \\
+           & = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}
+\end{align*}
+Modellierung mit anderem W-Raum:
+\begin{align*}
+    \tO      & = \{0,1,\dots ,n\}                         \\
+    \tS      & = P(\tO)                                   \\
+    P(\{k\}) & = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k} \\
+    P(A)     & = \sum_{k \in A} P(\{k\}), \; A \in \tS
+\end{align*}
+Hier ist das Ereignis nicht mehr der Vektor mit Resultaten,
+sondern direkt die Anzahl an Erfolgen.
+Dieses W-Maß heißt Binomialverteilung mit Parametern $n$ und $p$.
+Man schreibt $P = B(n,p)$.
