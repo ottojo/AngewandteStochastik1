@@ -437,3 +437,13 @@ $P$ heißt Poissonverteilung mit Parameter $\lambda > 0$: $P = P(\lambda)$
     Das heißt die Poissonverteilung taucht auf, wenn viele Versuche mit kleiner Erfolgswahrscheinlichkeit
     durchgeführt werden, d.h. falls $n$ groß und $p$ klein ist.
 \end{theorem}
+
+\subsubsection{Geometrische Verteilung}
+Hier wird ein Zufallsexperiment so oft durchgeführt, bis das erste mal das Ergebnis "Erfolg" auftritt.
+\begin{align*}
+    \tO      & = \mathbb{N}                               \\
+    \tS      & = P(\tO)                                   \\
+    P(\{k\}) & = (1-p)^{k-1} \cdot p, \; k \in \mathbb{N} \\
+    P(A)     & = \sum_{k \in A} P(\{k\}), \; A \in \tS
+\end{align*}
+Man schreibt $P = G(p)$ für eine geometrische Verteilung mit Erfolgswahrscheinlichkeit $p \in (0,1]$.
