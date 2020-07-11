@@ -11,6 +11,9 @@
 \usepackage{csquotes}
 \MakeOuterQuote{"}
 \usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{float}
 
 
 % Bold \emph
@@ -26,6 +29,11 @@
 \newcommand{\tO}{\ensuremath{\Omega}}
 \newcommand{\w}{\ensuremath{\omega}}
 \newcommand{\wraum}{\ensuremath{(\Omega, \Sigma, P)}}
+\newcommand{\real}{\ensuremath{\mathbb{R}}}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
 
 \author{Jonas Otto}
 \title{Vorlesungsnotizen zu \enquote{Angewandte Stochastik I} an der Uni Ulm}
@@ -50,5 +58,6 @@ Ziel dieses Abschnittes ist die Mathematische Modellierung von Zufallsexperiment
 \include{chapters/W-Raum/W-Maße-Eigenschaften}
 \include{chapters/W-Raum/Endliche-W-Räume}
 \include{chapters/W-Raum/Diskrete-W-Räume}
+\include{chapters/W-Raum/Stetige-W-Räume}
 
 \end{document}
