@@ -1,0 +1,34 @@
+\section{Wahrscheinlichkeiten}
+
+Wir definieren $P(A)$ für alle $A \in \Sigma$.
+\begin{definition}[Disjunkte Mengen]
+    Mengen $A, B$ heißen disjunkt, falls $A\cap B = \emptyset$\\
+    Mengen $A_1, A_2, \dots$ heißen paarweise disjunkt (p.d.) falls für alle $i \neq j$ gilt
+    $A_i \cap A_j = \emptyset$
+\end{definition}
+
+Idee: P soll folgende Eigenschaften haben:
+\begin{enumerate}
+    \item Für alle $A\in \Sigma$ gilt: $0 \leq P(A)\leq 1$
+    \item $P(\Omega) = 1$ und $P(\emptyset) = 0$
+    \item $P(A^\complement) = 1-P(A)$ für alle $A\in \Sigma$
+    \item falls $A,B\in\Sigma$ disjunkt sind, so gilt
+          $P(A\cup B) = P(A) + P(B)$.
+    \item falls $A_1, A_2,\dots \in \Sigma$ p.d., so gilt
+          $P(\bigcup\limits_{i=1}^\infty A_i) = \sum_{i=1}^\infty P(A_i)$
+\end{enumerate}
+
+Das motiviert folgende Definition
+
+\begin{definition}[Wahrscheinlichkeitsmaß]
+    Sei $\Omega \neq \emptyset$ und \tS\ eine \ts-Algebra auf \tO.
+    Eine Abbildung $P: \Sigma \to [0,1]$ heißt Wahrscheinlichkeitsmaß (W-Maß) auf \tS\ falls
+    \begin{enumerate}
+        \item $P(\Omega) = 1$
+        \item Sind $A_1, A_2,\dots \in \Sigma$ paarweise disjunkt, dann gilt
+              $P\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i)$
+              (\ts-Additivität)
+    \end{enumerate}
+\end{definition}
+\noindent
+Das Tripel $\left( \Omega, \Sigma, P\right)$ heißt \emph{Wahrscheinlichkeitsraum} (W-Raum).

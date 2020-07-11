@@ -1,0 +1,37 @@
+\section{Diskrete Wahrscheinlichkeitsräume}
+Bisher war \tO\ endlich. In diesem Abschnitt soll \tO\ abzählbar unendlich sein, d.h.
+$\tO = \{ \w_1, \w_2, \dots\}$, $\w_i \neq \w_j$ für $i \neq j$.
+
+\subsection{Poisson Verteilung}
+$\tO = \mathbb{N}_0$, $\tS = P(\tO)$
+\begin{align*}
+    P(\{k\}) & = \frac{\lambda^k}{k!} \cdot e^{-\lambda}, \; k \in \mathbb{N}_0, \; \lambda > 0 \\
+    P(A)     & = \sum_{k \in A} P(\{k\}), \; A \in \tS
+\end{align*}
+Mit der Reihenentwicklung der Exponentialfunktion lässt sich zeigen dass $P(\tO) = 1$.
+$P$ heißt Poissonverteilung mit Parameter $\lambda > 0$: $P = P(\lambda)$
+
+\begin{theorem}[Poisson Approximation]
+    Sei $p_1, p_2, \dots$ eine Folge mit $p_j \in [0, 1]$ für $j \in \mathbb{N}$ und
+    $n \cdot p_n \xrightarrow[n \to \infty]{} \lambda > 0$.
+    Dann gilt
+    \begin{equation*}
+        B(n, p_n)(\{k\}) \xrightarrow[n \to \infty]{} P(\lambda)(\{k\})
+    \end{equation*}
+    für alle $k \in \mathbb{N}_0$. D.h.
+    \begin{equation*}
+        \binom{n}{k} \cdot p_n^k \cdot (1-p_n)^{n-k} \xrightarrow[n \to \infty]{} \frac{\lambda^k}{k!} \cdot e^{-\lambda}
+    \end{equation*}
+    Das heißt die Poissonverteilung taucht auf, wenn viele Versuche mit kleiner Erfolgswahrscheinlichkeit
+    durchgeführt werden, d.h. falls $n$ groß und $p$ klein ist.
+\end{theorem}
+
+\subsection{Geometrische Verteilung}
+Hier wird ein Zufallsexperiment so oft durchgeführt, bis das erste mal das Ergebnis "Erfolg" auftritt.
+\begin{align*}
+    \tO      & = \mathbb{N}                               \\
+    \tS      & = P(\tO)                                   \\
+    P(\{k\}) & = (1-p)^{k-1} \cdot p, \; k \in \mathbb{N} \\
+    P(A)     & = \sum_{k \in A} P(\{k\}), \; A \in \tS
+\end{align*}
+Man schreibt $P = G(p)$ für eine geometrische Verteilung mit Erfolgswahrscheinlichkeit $p \in (0,1]$.

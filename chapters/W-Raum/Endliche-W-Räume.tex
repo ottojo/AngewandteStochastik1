@@ -1,0 +1,212 @@
+
+\section{Endliche Wahrscheinlichkeitsräume}
+In diesem Abschnitt: \tO\ ist endlich, d.h. $\Omega = \{\omega_1, \omega_2, \dots, \omega_n\}$
+für ein $n \in \mathbb{N}$.
+In diesem Fall kann man $\Sigma = \mathbb{P}(\Omega)$ wählen.
+Ferner ist ein W-Maß $P$ bereits durch die Werte $p_i = P(\{\omega_i\}), i=1,\dots,n$
+von Elementarereignissen $\{\omega_i\}$ eindeutig bestimmt.
+
+\begin{definition}[Endlicher W-Raum]
+    Ein W-Raum $(\Omega, \Sigma,  P)$ heißt \emph{endlicher W-Raum}, falls \tO\ endlich ist und
+    $\Sigma = \mathbb{P}(\Omega)$ gilt.
+\end{definition}
+
+Beachte: Sei $(\Omega, \Sigma, P)$ ein endlicher W-Raum. Im Allgemeinen ist es nicht der Fall, dass alle
+Elementarereignisse gleichwahrscheinlich sind.
+
+\paragraph{Laplace W-Räume} Ein besonders einfacher Fall liegt dann vor, wenn alle Elementarereignisse
+$\{\omega_i\}$ gleichwahrscheinlich sind.
+
+\begin{definition}[Laplace-W-Raum]
+    Ein endlicher W-Raum $(\Omega, \Sigma, P)$ und $p_i = P(\{\omega_i\}) = \frac{1}{|\Omega|} = \frac{1}{n}$
+    für alle $i=1,\dots,n$ heißt \emph{Laplace-W-Raum}.
+    Das W-Maß $P$ heißt \emph{diskrete Gleichverteilung}.
+    Man schreibt $P=U(\Omega)$ (\textit{uniform}).
+    Ein Zufallsexperiment, welches durch einen Laplace-Raum bechrieben ist, nennt man ein
+    Laplace-Experiment.
+\end{definition}
+
+Sei \wraum\ ein Laplace W-Raum. Es folgt:
+\begin{equation*}
+    P(A) = \sum_{\w_i \in A} P(\{\w_i\}) = \sum_{\w_i \in A} \frac{1}{|\tO|} = \frac{|A|}{|\tO|}
+\end{equation*}
+Die Bestimmung der Kardinalitäten von \tO\ und $A$ kann nichttrivial sein.
+
+\begin{theorem}
+    Seien $A_1, \dots ,A_n$ endliche Mengen und $A= \{ (a_1, \dots , a_n): a_1 \in A_1, \dots , a_n \in A_n \} = A_1 \times \dots \times A_n$.
+    Dann gilt $|A| = |A_1| \cdot |A_2| \cdots |A_n|$
+\end{theorem}
+
+\subsection{Urnenmodelle}
+\begin{itemize}
+    \item Urne mit $n$ Kugeln, welche nummeriert sind mit $1, \dots , n$.
+    \item Zufälliges Ziehen von $k$ Kugeln
+\end{itemize}
+Das Ergebnis ist ein Vektor $(\w_1,\dots , \w_k)$ wobei ein Element jeweils die
+Nummer einer Kugel ist.
+
+\subsubsection{Verschiedene Arten von Ziehungen}
+\begin{enumerate}
+    \item Mit Zurücklegen (z.B Ergebnis $(1,1,2,2)$ möglich) \\
+          Ohne Zurücklegen (z.B. Ergebnis $(1,1,2,2)$ nicht möglich)
+    \item Mit Beachten der Reihenfolge\\
+          Ohne Beachten der Reihenfolge
+\end{enumerate}
+$\implies$ Insgesamt 4 mögliche Fälle.
+
+\subsubsection{Fall 1: Mit Zurücklegen und mit Beachtung der Reihenfolge}
+Die Menge aller Ergebnisse ist
+\begin{align*}
+    \tO_1 & = \{ (\w_1, \dots ,\w_k): \w_1, \dots ,\w_k \in \{1,\dots ,n\} \} \\
+          & =\{ 1,\dots ,n \}^k
+\end{align*}
+Für die Kardinalität der Menge gilt
+\begin{equation*}
+    |\tO_1| = n^k
+\end{equation*}
+
+\subsubsection{Fall 2: Ohne Zurücklegen, mit Beachtung der Reihenfolge}
+$\implies k \leq n$.\\
+Menge aller Ergebnisse:
+\begin{equation*}
+    \tO_2 = \{ (\w_1, \dots ,\w_k): \w_1, \dots ,\w_k \in \{ 1, \dots ,n \} \text{ und } \w_i \neq \w_j \text{ für } i \neq j \}
+\end{equation*}
+Es gilt:
+\begin{equation*}
+    |\tO_2| = n \cdot (n-1) \cdot (n-2) \cdots (n-k+1) = \frac{n!}{(n-k)!}
+\end{equation*}
+Insbesondere gilt für $n=k$: $|\tO_2| = n!$.
+
+\subsubsection[Urnenmodell, Fall 3]{Fall 3: Ohne Zurücklegen, ohne Beachtung der Reihenfolge}
+\label{sec:urne3}
+$\implies k \leq n$.\\
+Vorgehen: Erst Beachten der Reihenfolge, dann sortieren der Vektoren in aufsteigender Reihenfolge.
+\begin{equation*}
+    \tO_3 = \{ (\w_1, \dots ,\w_k): 1 \leq \w_1 < \w_2 < \dots < \w_k \leq k \}
+\end{equation*}
+\begin{equation*}
+    |\tO_3| = \frac{|\tO_2|}{k!} = \frac{n!}{(n-k)! \cdot k!} = \binom{n}{k}
+\end{equation*}
+
+\subsubsection{Fall 4: Mit Zurücklegen, ohne Beachtung der Reihenfolge}
+Analog zu Fall 3:
+\begin{equation*}
+    \tO_4 = \{ (\w_1, \dots ,\w_k): 1 \leq \w_1 \leq \w_2 \leq \dots \leq \w_k \leq k \}
+\end{equation*}
+Die Kardinalität ist (ohne Beweis):
+\begin{equation*}
+    |\tO_4| = \binom{n+k-1}{k}
+\end{equation*}
+
+\subsection{Weitere W-Maße in endlichen W-Räumen}
+\subsubsection{Hypergeometrische Verteilung}
+Darstellung im Urnenmodell: Die Urne enthält $n$ Kugeln, davon sind $B$ blau, und $n-B$ weiß.
+Dabei ist $B \in \{0,\dots ,n\}$. Es werden $k$ Kugeln gezogen, ohne Zurücklegen und ohne beachten
+der Reihenfolge.
+
+Es soll nun für $b \in  \{0,\dots ,k\}$ die Wahrscheinlichkeit berechnet werden für das Ereignis
+$A_b$ = "genau $b$ der gezogenen Kugeln sind blau".
+
+Dazu wird das Experiment mit einen Laplace Raum modelliert, mit
+\begin{equation*}
+    \tO = \{ (\w_1, \dots ,\w_k): 1 \leq \w_1 < \w_2 < \dots < \w_k \leq n \}
+\end{equation*}
+(analog zu \nameref{sec:urne3}). \w\ ist dabei die Nummer einer Kugel.
+Da es sich um einen Laplace Raum handelt, gilt
+\begin{equation*}
+    P(A_b) = \frac{|A_b|}{|\tO|}
+\end{equation*},
+und aus dem Urnenmodell ergibt sich
+\begin{equation*}
+    |\tO| = \binom{n}{k}
+\end{equation*}.
+Nun muss die Kardinalität $|A_b|$ bestimmt werden.
+Für die Fälle "mehr blaue Kugeln als in der Urne vorhanden" und
+"mehr weiße Kugeln als in der Urne vorhanden", kann bereits festgestellt werden:
+\begin{equation*}
+    |A_b| = \begin{cases}
+        0 & \text{falls } b>B                      \\
+        0 & \text{falls } b-k>n-B (\iff b<k-(n-B))
+    \end{cases}
+\end{equation*}
+
+In allen anderen Fällen gilt
+\begin{equation*}
+    |A_b| = \underbrace{\binom{B}{b}}_\text{
+        \hidewidth
+        Anzahl an Möglichkeiten für $b$ blaue Kugeln
+        \hidewidth} \cdot
+    \overbrace{\binom{n-B}{k-b}}^\text{
+        \hidewidth
+        Anzahl an Möglichkeiten für $k-b$ weiße Kugeln
+        \hidewidth }
+\end{equation*}
+Damit folgt:
+\begin{equation*}
+    P(A_b)= \begin{cases}
+        0                                                  & \text{falls } b>B \text{ oder } b<k-(n-B) \\
+        \frac{\binom{B}{b} \binom{n-B}{k-b}}{\binom{n}{k}} & \text{sonst}
+    \end{cases}
+\end{equation*}
+
+Das gleiche Experiment kann auch anders modelliert werden:
+\begin{equation*}
+    \tO = \{ 0, \dots ,k \}, \Sigma = \mathbb{P}(\tO)
+\end{equation*}
+\begin{equation*}
+    P(\{b\}) = \begin{cases}
+        0                                                  & \text{falls } b>B \text{ oder } b<k-(n-B) \\
+        \frac{\binom{B}{b} \binom{n-B}{k-b}}{\binom{n}{k}} & \text{sonst}
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    P(A) = \sum_{b \in A} P(\{b\})
+\end{equation*}
+Dieses W-Maß heißt \emph{Hypergeometrische Verteilung} mit Parametern $n, B, k$.
+Man schreibt $P=H(n,B,k)$.
+
+\subsubsection{Bernoulli Verteilung}
+\label{sec:bernoulli}
+Hier sind die einzig möglichen Ergebnisse "Erfolg" und "Misserfolg":
+$\tO = \{ 0,1 \}$, $\tS = P(\tO)$.
+Die Erfolgswahrscheinlichkeit ist gegeben durch $p \in [0,1]$:
+\begin{align*}
+    P(\{1\})     & = p   \\
+    P(\{0\})     & = 1-p \\
+    P(\emptyset) & = 0   \\
+    P(\tO)       & = 1
+\end{align*}
+Dieses Wahrscheinlichkeitsmaß heißt Bernoulli Verteilung mit Parameter $p$.
+Man schreibt $P=B(1,p)$.
+
+\subsubsection{Binomial Verteilung}
+Hier wird das Experiment der \nameref{sec:bernoulli} $n$-malig wiederholt.
+Modellierung durch den W-Raum \wraum\ mit:
+\begin{align*}
+    \tO       & = \left\{ (\w_1, \dots , \w_n): \w_1, \dots , \w_n \in \{0,1\} \right\} = \{0,1\}^n \\
+    \tS       & = P(\tO)                                                                            \\
+    P(\{\w\}) & = P(\{(\w_1, \dots , \w_n)\}) = p^k \cdot (1-p)^{n-k}
+\end{align*}
+Wobei $k=\sum_{i=1}^n \w_i$ die Anzahl der Erfolge ist.
+
+\begin{equation*}
+    P(A) = \sum_{\w \in A} P(\{\w\}), \; A \in \tS
+\end{equation*}
+Betrachtet wird das Ereignis $A_k =$ "genau $k$ Erfolge" mit $k \in \{0, \dots , n\}$.
+Es gilt:
+\begin{align*}
+    P(A_k) & = \sum_{\w \in A_k} P(\{ \w \})            \\
+           & = \sum_{\w \in A_k} p^k (1-p)^{n-k}        \\
+           & = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k}
+\end{align*}
+Modellierung mit anderem W-Raum:
+\begin{align*}
+    \tO      & = \{0,1,\dots ,n\}                         \\
+    \tS      & = P(\tO)                                   \\
+    P(\{k\}) & = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k} \\
+    P(A)     & = \sum_{k \in A} P(\{k\}), \; A \in \tS
+\end{align*}
+Hier ist das Ereignis nicht mehr der Vektor mit Resultaten,
+sondern direkt die Anzahl an Erfolgen.
+Dieses W-Maß heißt Binomialverteilung mit Parametern $n$ und $p$.
+Man schreibt $P = B(n,p)$.

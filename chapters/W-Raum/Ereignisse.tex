@@ -1,0 +1,43 @@
+\section{Ereignisse}
+Motivation: Oft ist nicht das tatsächliche Ergebnis des Experiments interessant, sondern nur
+ob das Ergebnis in eine vorgegebene Menge von Ergebnissen $A$ fällt.
+
+\paragraph{Beispiel: Würfeln} Augenzahl ist gerade: $A = \{2,4,6\}$
+
+\paragraph{Beispiel: Anzahl täglicher Bestellungen} Vorrat von 100 Artikeln wird nicht
+überschritten: $A = \{0,1,2,\dots,100\}$.
+
+\paragraph{Beispiel: Temperatur} Temperatur beträgt über $25\degree$:
+$A = [25,50]$ (falls $\Omega = [-50,50])$ oder $A= [25, \infty)$ (falls $\Omega = \mathbb{R}$)
+\\
+
+Diese Teilmengen$A$ von $\Omega$, denen Wahrscheinlichkeiten zugeordnet werden sollen,
+heißen \emph{Ereignisse}.
+Man sagt \enquote{Das Ergebnis A tritt ein}, falls das Ergebbnis $\omega$ des Zufallexperimentes
+in dieser Menge $A$ liegt (d.h. $\omega \in A$).
+Mittels Mengenoperationen können Ereignisse zu neuen Ereignissen verknüpft werden.
+
+\begin{itemize}
+    \item $A \cup B$: Ereignis $A$ oder Ereignis $B$ tritt ein.
+
+    \item $A \cap B$: Ereignis $A$ und Ereignis $B$ treten ein.
+
+    \item $A\setminus B$: Ereignis $A$, nicht aber Ereignis $B$ tritt ein.
+
+    \item $A^\complement = \Omega\setminus A$: Ereignis $A$ tritt nicht ein.
+
+    \item $\bigcup\limits_{i=1}^\infty A_i$: Mindestens eines der Ereignisse
+          $A_1, A_2, \dots$ tritt ein.
+
+    \item $\bigcap\limits_{i=1}^\infty A_i$: Alle Ereignisse $A_1, A_2, \dots$
+          treten ein.
+\end{itemize}
+
+\paragraph{Beispiel} Münze wird zwei Mal geworfen.\\
+$\Omega = \{KK, KZ, ZK, ZZ\}$\\
+Sei $A_1$ das Ereignis \enquote{Im ersten Wurf fällt Kopf} und\\
+sei $A_2$ das Ereignis \enquote{Im zweiten Wurf fällt Kopf}. Dann gilt\\
+$A_1 = \{KK, KZ\}$, $A_2 = \{KK, ZK\}$.\\
+Die Menge $A_1 \cup A_2 = \{KK, KZ, ZK\}$ ist das Ereignis \enquote{Es fällt mindestens ein Mal
+    Kopf}.\\
+Die Menge $A_1 \cap A_2 = \{KK\}$ ist das Ereignis \enquote{Es fällt zwei Mal Kopf}.\\
