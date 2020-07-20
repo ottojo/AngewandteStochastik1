@@ -1,0 +1,33 @@
+\section{Bedingte Wahrscheinlichkeiten}
+Die bedingte Wahrscheinlichkeit von $A$ gegeben $B$ ist definiert als
+\begin{equation}
+    P(A|B) = \frac{P(A\cap B)}{P(B)}
+\end{equation}
+
+\begin{theorem}[Totale Wahrscheinlichkeit, Satz von Bayes]
+    Sei \wraum\ ein W-Raum und seien $B_1, \dots, B_n \in \tS$ paarweise
+    disjunkt mit $P(B_i) > 0$ für $i=1, \dots, n$ und
+    $B_1 \cup \dots \cup B_n = \tO$
+    \begin{enumerate}
+        \item Satz von der totalen Wahrscheinlichkeit:\\
+              Für alle $A \in \tS$ gilt:
+              \begin{equation*}
+                  P(A) = \sum P(A|B_i) \cdot P(B_i)
+              \end{equation*}
+        \item Satz von Bayes:\\
+              Für alle $A \in \tS$ mit $P(A) > 0$ und alle $i=1, \dots, n$ gilt:
+              \begin{equation*}
+                  P(B_i|A)
+                  = \frac{P(A|B_i) P(B_i)}{P(A)}
+                  = \frac{P(A|B_i) P(B_i)}{\sum_j P(A|B_j) \cdot P(B_j)}
+              \end{equation*}
+    \end{enumerate}
+\end{theorem}
+
+\paragraph{Beachte:}
+Für $A,B \in \tS$ gilt mit $P(B)>0$:
+\begin{equation*}
+    P(A|B) = \frac{P(A \cap B)}{P(B)}
+    = \frac{P(B) - P(A^\complement \cap B)}{P(B)}
+    = 1 - P(A^\complement | B)
+\end{equation*}
