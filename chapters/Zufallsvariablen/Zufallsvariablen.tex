@@ -58,3 +58,68 @@ $X$ bildet den ursprünglichen W-Raum in einen neuen ab:
               Beachte: Es gilt $P(\{X \in D_X \}) = 1$.
     \end{enumerate}
 \end{definition}
+
+\subsection{Verteilungsfunktion}
+
+\begin{definition}[Verteilungsfunktion]
+    Ist $X$ eine Zufallsvariable auf \wraum, dann ist die Verteilungsfunktion
+    $F_X: \real \to [0,1]$ von $X$ gegeben durch
+    \begin{equation*}
+        F_X(t) = P(\{X \leq t\})
+    \end{equation*}
+\end{definition}
+
+\subsubsection{Verteilungsfunktion einer diskreten Zufallsvariable}
+\begin{equation*}
+    F_X(t) = \sum_{k=0}^t P(\{X=k\})
+\end{equation*}
+$P(\{X=k\})$ ist die \emph{Zähldichte} von $X$.
+\todo{Zähldichte: Tut 3}
+
+\subsubsection{Verteilungsfunktion einer absolut stetigen Zufallsvariable}
+\begin{equation*}
+    F_X(t) = \int_{-\infty}^t p(x) dx
+\end{equation*}
+$p(x)$ ist die \emph{Wahrscheinlichkeitsdichte} von $X$.
+
+\subsubsection{Eigenschaften der Verteilungsfunktion}
+\begin{itemize}
+    \item $F_X$ ist monoton wachsend
+    \item Grenzwerte:
+          \begin{align*}
+              \lim_{t \to -\infty} F_X(t) = 0 \\
+              \lim_{t \to \infty} F_X(t) = 1  \\
+          \end{align*}
+    \item $F_X$ ist rechtsseitig stetig:
+          \begin{equation*}
+              \lim_{t_n \uparrow t} F_X(t_n) = F_X(t)
+          \end{equation*}
+    \item Für jedes $t \in \real$ existiert der linksseitige Grenzwert:
+          \begin{equation*}
+              F_X(t-) = \lim_{t_n \downarrow t} F_X(t_n)
+          \end{equation*}
+    \item Es gilt:
+          \begin{equation*}
+              P(\{X=t\}) = F_X(t) - F_X(-t)
+          \end{equation*}
+    \item Für $a<b$ gilt:
+          \begin{equation*}
+              P(\{X \in [a,b]\}) = \int_a^b p(x)dx
+          \end{equation*}
+    \item Die Verteilung einer Zufallsvariable ist eindeutig durch ihre Verteilungsfunktion
+          bestimmt.
+\end{itemize}
+
+\subsection{Beispiele}
+\subsubsection{Definition einer Zufallsvariable}
+In Übungsblatt 6 wurde die Aufgabe gestellt:
+\say{Modellieren Sie das Zufallsexperiment durch Angabe eines geeigneten Wahrscheinlichkeitsraumes und definieren Sie $X$}
+
+Der W-Raum kann unabhängig von der Zufallsvariablen durch Betrachten des Experiments
+aufgestellt werden.
+Das Beispiel hier ist das 3-malige Drehen eines Glücksrads, mit gleichen Wahrscheinlichkeiten.
+Es wird ein Laplace Raum mit $\tO = \{1,2,3\}^3$ angegeben. \tS\ als Potenzmenge und
+$P(A) = \frac{|A|}{|\tO|}$ folgt aus der Tatsache dass es sich um einen Laplace Raum handelt.
+
+Für $X: \tO \to \real$ genügt es, eine Vorschrift $X(\w)$, hier
+$X(\w) = \w_1 \cdot \w_2 \cdot \w_3$ mit $\w = (\w_1, \w_2, \w_3)$, anzugeben.
