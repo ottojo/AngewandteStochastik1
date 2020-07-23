@@ -30,6 +30,8 @@
 \newcommand{\w}{\ensuremath{\omega}}
 \newcommand{\wraum}{\ensuremath{(\Omega, \Sigma, P)}}
 \newcommand{\real}{\ensuremath{\mathbb{R}}}
+\newcommand{\defeq}{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\small def}}}{=}}}
+\newcommand{\shouldeq}{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\small !}}}{=}}}
 
 \pgfmathdeclarefunction{gauss}{2}{%
   \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
@@ -60,5 +62,6 @@ Ziel dieses Abschnittes ist die Mathematische Modellierung von Zufallsexperiment
 \include{chapters/W-Raum/Diskrete-W-Räume}
 \include{chapters/W-Raum/Stetige-W-Räume}
 \include{chapters/W-Raum/Bedingte-Wkeiten}
+\include{chapters/W-Raum/Unabhängigkeit}
 
 \end{document}

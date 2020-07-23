@@ -1,0 +1,42 @@
+\section{Unabhängigkeit}
+Sei \wraum\ ein W-Raum und $A,B \in \tS$ mit $P(A), P(B) > 0$.
+
+\paragraph{Idee:}
+Unabhängigkeit von $A$ und $B$ soll bedeuten, dass das Eintreten von $A$ (bzw $B$)
+keinen Einfluss auf $P(A)$ (bzw $P(B)$) hat, d.h.
+\begin{equation*}
+    P(A|B) \defeq \frac{P(A \cap B)}{P(B)} \shouldeq P(A)
+\end{equation*}
+\begin{equation*}
+    P(B|A) \defeq \frac{P(B \cap A)}{P(A)} \shouldeq P(B)
+\end{equation*}
+also muss
+\begin{equation*}
+    P(A \cap B) = P(A) \cdot P(B)
+\end{equation*}
+gelten.
+
+\begin{definition}[Unabhängigkeit]
+    Sei \wraum\ ein W-Raum und $A, B \in \tS$.
+    Dann heißen A und B \emph{unabhängig}, falls gilt:
+    \begin{equation}
+        P(A \cap B) = P(A) \cdot P(B)
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Unabhängigkeit mehrerer Ereignisse]
+    Sei \wraum\ ein W-Raum und $A_1, A_2, \dots, A_n \in \tS$.
+    Dann heißen $A_1, A_2, \dots, A_n$
+    \begin{enumerate}
+        \item paarweise unabhängig, falls $A_i$ und $A_j$ unabhängig sind
+              für alle $i \neq j$.
+        \item unabhängig, falls für alle $T \subseteq \{1, \dots, n\}$
+              mit $|T| \geq 2$ gilt:
+              \begin{equation*}
+                  P\left(\bigcap_{i \in T} A_i \right) = \prod_{i \in T} P\left( A_i \right)
+              \end{equation*}
+    \end{enumerate}
+\end{definition}
+
+\paragraph{Bemerkung:}
+Unabhängigkeit impliziert paarweise Unabhängigkeit. Umgekehrt nicht!
