@@ -14,6 +14,8 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{float}
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline}{}
 
 
 % Bold \emph
@@ -23,6 +25,8 @@
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+\newcommand*{\definitionautorefname}{Definition}
+
 
 \newcommand{\ts}{\ensuremath{\sigma}}
 \newcommand{\tS}{\ensuremath{\Sigma}}
@@ -48,20 +52,23 @@
 
 \tableofcontents
 
-\include{chapters/Einleitung}
+\input{chapters/Einleitung}
 
 \chapter{Wahrscheinlichkeitsräume}
 Ziel dieses Abschnittes ist die Mathematische Modellierung von Zufallsexperimenten
-\include{chapters/W-Raum/Ergebnisraum}
-\include{chapters/W-Raum/Ereignisse}
-\include{chapters/W-Raum/Sigma-Algebra}
-\include{chapters/W-Raum/Wahrscheinlichkeiten}
-\include{chapters/W-Raum/Beispiele-W-Raum}
-\include{chapters/W-Raum/W-Maße-Eigenschaften}
-\include{chapters/W-Raum/Endliche-W-Räume}
-\include{chapters/W-Raum/Diskrete-W-Räume}
-\include{chapters/W-Raum/Stetige-W-Räume}
-\include{chapters/W-Raum/Bedingte-Wkeiten}
-\include{chapters/W-Raum/Unabhängigkeit}
+\input{chapters/W-Raum/Ergebnisraum}
+\input{chapters/W-Raum/Ereignisse}
+\input{chapters/W-Raum/Sigma-Algebra}
+\input{chapters/W-Raum/Wahrscheinlichkeiten}
+\input{chapters/W-Raum/Beispiele-W-Raum}
+\input{chapters/W-Raum/W-Maße-Eigenschaften}
+\input{chapters/W-Raum/Endliche-W-Räume}
+\input{chapters/W-Raum/Diskrete-W-Räume}
+\input{chapters/W-Raum/Stetige-W-Räume}
+\input{chapters/W-Raum/Bedingte-Wkeiten}
+\input{chapters/W-Raum/Unabhängigkeit}
+
+\chapter{Zufallsvariablen}
+\input{chapters/Zufallsvariablen/Zufallsvariablen}
 
 \end{document}
