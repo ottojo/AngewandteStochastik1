@@ -126,8 +126,45 @@ $X$ bildet den ursprünglichen W-Raum in einen neuen ab:
           \end{equation*}
 \end{enumerate}
 
-\subsection{Verteilungsfunktion}
+\subsection{Absolut stetige Verteilungen}
+\begin{definition}[Absolut stetige Verteilung]
+    Eine Zufallsvariable $X$ heißt absolut stetig verteilt, falls $P_X$ absolut stetig ist,
+    d.h. $P_X$ besitzt eine Dichte.
+\end{definition}
 
+Wir führen folgende Sprech- und Schreibweisen ein: Sei $X$ eine Zufallsvariable.
+
+\begin{enumerate}
+    \item $X$ heißt \emph{gleichverteilt} auf $[a,b]$ mit $a<b$ falls
+          \begin{equation*}
+              P_X=U([a,b])
+          \end{equation*}
+          Man schreibt
+          \begin{equation*}
+              X \sim U([a,b])
+          \end{equation*}
+
+    \item $X$ heißt \emph{exponentialverteilt} mit Parameter $\lambda > 0$ falls
+          \begin{equation*}
+              P_X = \operatorname{Exp}(\lambda)
+          \end{equation*}
+          Man schreibt
+          \begin{equation*}
+              X \sim \operatorname{Exp}(\lambda)
+          \end{equation*}
+
+    \item $X$ heißt \emph{normalverteilt} mit Parametern $\mu \in \real$ und $\sigma^2 >0$
+          falls
+          \begin{equation*}
+              P_X = N(\mu, \sigma^2)
+          \end{equation*}
+          Man schreibt
+          \begin{equation*}
+              X \sim N(\mu, \sigma^2)
+          \end{equation*}
+\end{enumerate}
+
+\subsection{Verteilungsfunktion}
 \begin{definition}[Verteilungsfunktion]
     Ist $X$ eine Zufallsvariable auf \wraum, dann ist die Verteilungsfunktion
     $F_X: \real \to [0,1]$ von $X$ gegeben durch
