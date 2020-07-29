@@ -59,6 +59,72 @@ $X$ bildet den ursprünglichen W-Raum in einen neuen ab:
     \end{enumerate}
 \end{definition}
 
+\subsection{Diskrete Verteilungen}
+\begin{enumerate}
+    \item $X$ heißt \emph{Bernoulli} verteilt mit Parameter $p \in [0,1]$, falls gilt:
+          \begin{align*}
+              P(\{X=1\}) & = p   \\
+              P(\{X=0\}) & = 1-p
+          \end{align*}
+          In diesem Fall gilt: $P(\{X\in\underbrace{\{0,1\}}_{=D}\}) = p+(1-p) = 1$
+          Ferner gilt:
+          \begin{equation*}
+              D_X = \begin{cases}
+                  \{0,1\} & , \text{falls } p \in (0,1) \\
+                  \{0\}   & , \text{falls } p=0         \\
+                  \{1\}   & , \text{falls } p=1
+              \end{cases}
+          \end{equation*}
+          Wir schreiben:
+          \begin{equation*}
+              X \sim B(1,p)
+          \end{equation*}
+
+    \item $X$ heißt \emph{Gleichverteilt} auf $G$, für $G \subset \real$, $G \neq \emptyset$
+          und endlich, falls
+          \begin{equation*}
+              P(\{X=x\}) = \frac{1}{|G|} \; \forall x \in G
+          \end{equation*}
+          Wir schreiben:
+          \begin{equation*}
+              X \sim U(G)
+          \end{equation*}
+
+    \item $X$ heißt \emph{hypergeometrisch} verteilt mit Parametern
+          \begin{align*}
+              n & \in \mathbb{N}      & \textit{Anzahl Kugeln}   \\
+              B & \in \{0, \dots, n\} & \textit{blaue Kugeln}    \\
+              k & \in \{1, \dots, n\} & \textit{gezogene Kugeln} \\
+          \end{align*}
+          wenn gilt:
+          \begin{equation*}
+              P\left(\left\{X=b\right\}\right)
+              = \frac{\binom{B}{b} \binom{n-B}{k-b}}{\binom{n}{k}}
+          \end{equation*}
+          Wir schreiben:
+          \begin{equation*}
+              X \sim H(n,B,k)
+          \end{equation*}
+
+    \item $X$ heißt \emph{Poissonverteilt} mit Parameter $\lambda > 0$, falls gilt:
+          \begin{equation*}
+              P(\{X=k\}) = \frac{\lambda^k}{k!} e^{-\lambda} \;\; \forall k\in \mathbb{N}_0
+          \end{equation*}
+          Wir schreiben:
+          \begin{equation*}
+              X \sim P(\lambda)
+          \end{equation*}
+
+    \item $X$ heißt \emph{geometrisch} verteilt mit Parameter $p \in (0,1]$, falls
+          \begin{equation*}
+              P(\{X=k\}) = p (1-p)^{k-1} \;\; \forall k \in \mathbb{N}
+          \end{equation*}
+          Wir schreiben:
+          \begin{equation*}
+              X \sim G(p)
+          \end{equation*}
+\end{enumerate}
+
 \subsection{Verteilungsfunktion}
 
 \begin{definition}[Verteilungsfunktion]
